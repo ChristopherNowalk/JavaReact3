@@ -1,0 +1,59 @@
+
+
+#blank {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50px;
+    margin: auto;
+    z-index: 10;
+  }
+
+#imc {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50px;
+    margin: auto;
+    z-index: 2;
+  }
+
+#imc0 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50px;
+    margin: auto; 
+}
+
+#imc1 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50px;
+    margin: auto;
+}
+
+#imc2 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50px;
+    margin: auto; 
+}
+
+#imc3 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50px;
+    margin: auto; 
+}
+
+#imc4 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50px;
+    margin: auto;
+}

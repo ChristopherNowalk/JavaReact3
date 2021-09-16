@@ -1,0 +1,20 @@
+
+<map name="image-map">
+  <area (click) = "onPress('imc1')" alt="" title="" coords="0,256,256,0" shape="rect">
+  <area (click) = "onPress('imc2')" alt="" title="" coords="256,256,512,0" shape="rect">
+  <area (click) = "onPress('imc3')" alt="" title="" coords="256,256,0,512" shape="rect">
+  <area (click) = "onPress('imc4')" alt="" title="" coords="256,256,512,512" shape="rect">
+</map>
+
+<img src="../assets/blank.png" usemap="#image-map" alt="" id="blank">
+<img src="../assets/dark.png" *ngIf = "hid" alt="" id="imc">
+<img src="../assets/lite.png" *ngIf = "hid0" alt="" id="imc0">
+<img src="../assets/1lite.png" *ngIf = "hid1" alt="" id="imc1">
+<img src="../assets/2lite.png" *ngIf = "hid2" alt="" id="imc2">
+<img src="../assets/3lite.png" *ngIf = "hid3" alt="" id="imc3">
+<img src="../assets/4lite.png" *ngIf = "hid4" alt="" id="imc4">
+
+
+
+
+<router-outlet></router-outlet>
