@@ -1,9 +1,13 @@
 
+  <h1 style="color: red; align-content:stretch;" *ngIf="gameOver">Game Over</h1>
+
+  <button style="margin: auto;" class="block">Start</button>
+
 <map name="image-map">
-  <area (click) = "onPress('imc1')" alt="" title="" coords="0,256,256,0" shape="rect">
-  <area (click) = "onPress('imc2')" alt="" title="" coords="256,256,512,0" shape="rect">
-  <area (click) = "onPress('imc3')" alt="" title="" coords="256,256,0,512" shape="rect">
-  <area (click) = "onPress('imc4')" alt="" title="" coords="256,256,512,512" shape="rect">
+  <area (click) = "onPress('imc1');recordUser(1)" alt="" title="" coords="0,256,256,0" shape="rect">
+  <area (click) = "onPress('imc2');recordUser(2)" alt="" title="" coords="256,256,512,0" shape="rect">
+  <area (click) = "onPress('imc3');recordUser(3)" alt="" title="" coords="256,256,0,512" shape="rect">
+  <area (click) = "onPress('imc4');recordUser(4)" alt="" title="" coords="256,256,512,512" shape="rect">
 </map>
 
 <img src="../assets/blank.png" usemap="#image-map" alt="" id="blank">
