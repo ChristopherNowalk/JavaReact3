@@ -6,6 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  record:boolean = false;
+  gameOver:boolean = false;
+  userClicks:number[] = [];
+  sequence:number[] =[];
+  index:number = 0;
+
   title = 'ng-simon';
 
   hid: boolean = true;
@@ -66,6 +72,22 @@ export class AppComponent {
 
    
   }
+
+
+  recordUser(button:number){
+    if(this.record != false){
+      this.userClicks.push(button)
+
+      for(var i = 0; i<this.userClicks.length;i++){
+        if(this.userClicks[i] != this.sequence[i]){
+          this.record = false;
+          this.gameOver = true;
+          break;
+        }
+      }
+  }
+  }
+
 }
 
 
