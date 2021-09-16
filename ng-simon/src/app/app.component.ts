@@ -15,6 +15,27 @@ export class AppComponent {
   hid3: boolean = true;
   hid4: boolean = true;
 
+  randomNum : number = 0;
+  //array for the players input to check agains the computers
+  playerInput : number[] = [];
+  //array which the player needs to match with their inputs
+  pattern : number[] = [];
+
+  ngOnInit() {
+    //on init we should reset the game
+    this.playerInput = [];
+    this.pattern = [];
+  }
+
+  //we should have a button to start the game so the player is ready to start memorizing the pattern
+  startGame() {
+
+  }
+
+  playPattern(arr : number[]) {
+    //run through the pattern array and light up each button that corresponds to the number in the array
+  }
+
   playAudio1(){
     let audio = new Audio();
     audio.src = "../assets/btn1a.wav";
@@ -56,6 +77,9 @@ export class AppComponent {
       this.hid3 = false;
       this.hid4 = false; 
       this.playAudio1();
+      console.log('1');
+      //when the player presses this button, 1 will be put into their array
+      this.playerInput.push(1);
       window.setTimeout(()=>{
         this.hid = true;
         this.hid1 = false;
@@ -68,6 +92,9 @@ export class AppComponent {
       this.hid3 = false;
       this.hid4 = false;
       this.playAudio2();
+      console.log('2');
+      //when the player presses this button, 2 will be put into their array
+      this.playerInput.push(2);
       window.setTimeout(()=>{
         this.hid = true;
         this.hid2 = false;
@@ -80,6 +107,9 @@ export class AppComponent {
       this.hid3 = true;
       this.hid4 = false;
       this.playAudio3(); 
+      console.log('3');
+      //when the player presses this button, 3 will be put into their array
+      this.playerInput.push(3);
       window.setTimeout(()=>{
         this.hid = true;
         this.hid3 = false;
@@ -92,6 +122,9 @@ export class AppComponent {
       this.hid3 = false;
       this.hid4 = true;
       this.playAudio4(); 
+      console.log('4');
+      //when the player presses this button, 4 will be put into their array
+      this.playerInput.push(4);
       window.setTimeout(()=>{
         this.hid = true;
         this.hid4 = false;
@@ -99,6 +132,14 @@ export class AppComponent {
     }
 
    
+  }
+
+  //for the random number generation
+  generateRandomNum(min: number, max : number) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    this.randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+    console.log(this.randomNum);
   }
 }
 
