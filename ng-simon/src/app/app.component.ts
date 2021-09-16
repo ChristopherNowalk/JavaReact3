@@ -21,7 +21,37 @@ export class AppComponent {
   hid3: boolean = true;
   hid4: boolean = true;
 
+  playAudio1(){
+    let audio = new Audio();
+    audio.src = "../assets/btn1a.wav";
+    audio.load();
+    audio.play();
+  }
+  
 
+  playAudio2(){
+    let audio = new Audio();
+    audio.src = "../assets/btn2a.wav";
+    audio.load();
+    audio.play();
+  }
+  
+
+  playAudio3(){
+    let audio = new Audio();
+    audio.src = "../assets/btn3a.wav";
+    audio.load();
+    audio.play();
+  }
+  
+
+  playAudio4(){
+    let audio = new Audio();
+    audio.src = "../assets/btn4a.wav";
+    audio.load();
+    audio.play();
+  }
+ 
 
   onPress(cat: any){
 
@@ -31,6 +61,7 @@ export class AppComponent {
       this.hid2 = false;
       this.hid3 = false;
       this.hid4 = false; 
+      this.playAudio1();
       window.setTimeout(()=>{
         this.hid = true;
         this.hid1 = false;
@@ -42,6 +73,7 @@ export class AppComponent {
       this.hid2 = true; 
       this.hid3 = false;
       this.hid4 = false;
+      this.playAudio2();
       window.setTimeout(()=>{
         this.hid = true;
         this.hid2 = false;
@@ -52,7 +84,8 @@ export class AppComponent {
       this.hid1 = false;
       this.hid2 = false;
       this.hid3 = true;
-      this.hid4 = false; 
+      this.hid4 = false;
+      this.playAudio3(); 
       window.setTimeout(()=>{
         this.hid = true;
         this.hid3 = false;
@@ -63,7 +96,8 @@ export class AppComponent {
       this.hid1 = false;
       this.hid2 = false;
       this.hid3 = false;
-      this.hid4 = true; 
+      this.hid4 = true;
+      this.playAudio4(); 
       window.setTimeout(()=>{
         this.hid = true;
         this.hid4 = false;
