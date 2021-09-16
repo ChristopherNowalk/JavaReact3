@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,6 +7,32 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  @HostListener('document:keyup', ['$event'])
+  handleDeleteKeyboardEvent(event: KeyboardEvent) {
+    if(event.key === 'q')
+    {
+      console.log("q");
+      this.onPress('imc1');
+    }
+    if(event.key === 'w')
+    {
+      console.log("w");
+      this.onPress('imc2');
+    }
+    if(event.key === 'a')
+    {
+      console.log("a");
+      this.onPress('imc3');
+    }
+    if(event.key === 's')
+    {
+      console.log("s");
+      this.onPress('imc4');
+    }
+  }
+
+
   record:boolean = false;
   gameOver:boolean = false;
   userClicks:number[] = [];
@@ -20,6 +47,7 @@ export class AppComponent {
   hid2: boolean = true;
   hid3: boolean = true;
   hid4: boolean = true;
+
 
   randomNum : number = 0;
   //array for the players input to check agains the computers
