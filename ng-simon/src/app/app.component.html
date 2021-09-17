@@ -22,7 +22,7 @@
 
 <button (click)='playBack()'>Playback</button>
 
-
-
+<h1 *ngIf="playerWins" style="color: green; height:200px; background:yellow;">You Win</h1>
+<h1 *ngIf="playerLoses" style="color: red; height:200px; background:orange;">You Lose</h1>
 
 <router-outlet></router-outlet>
