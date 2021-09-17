@@ -73,6 +73,7 @@ export class AppComponent {
   computerPattern: string[] = []
   async playBack() {
     this.computerPattern = []
+    // right now the size range is 2-4 so make it easier to test can really be any range.
     var randomSize = this.generateRandomNumGeneric(2, 4);
 
     for (let i=0;i<randomSize;i++) {
