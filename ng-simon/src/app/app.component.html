@@ -1,9 +1,9 @@
 
 <map name="image-map">
-  <area (click) = "onPress('imc1')" alt="" title="" coords="0,256,256,0" shape="rect">
-  <area (click) = "onPress('imc2')" alt="" title="" coords="256,256,512,0" shape="rect">
-  <area (click) = "onPress('imc3')" alt="" title="" coords="256,256,0,512" shape="rect">
-  <area (click) = "onPress('imc4')" alt="" title="" coords="256,256,512,512" shape="rect">
+  <area (click) = "onPress('imc1')" alt="blue" title="" coords="0,256,256,0" shape="rect">
+  <area (click) = "onPress('imc2')" alt="green" title="" coords="256,256,512,0" shape="rect">
+  <area (click) = "onPress('imc3')" alt="red" title="" coords="256,256,0,512" shape="rect">
+  <area (click) = "onPress('imc4')" alt="yellow" title="" coords="256,256,512,512" shape="rect">
 </map>
 
 <img src="../assets/blank.png" usemap="#image-map" alt="" id="blank">
@@ -14,7 +14,7 @@
 <img src="../assets/3lite.png" *ngIf = "hid3" alt="" id="imc3">
 <img src="../assets/4lite.png" *ngIf = "hid4" alt="" id="imc4">
 
-
+<button style="font-size: large; text-align: center;" (click)="gameRunning()">Start!</button>
 
 
 <router-outlet></router-outlet>
