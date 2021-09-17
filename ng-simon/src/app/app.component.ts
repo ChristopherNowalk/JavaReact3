@@ -71,7 +71,10 @@ export class AppComponent {
   }
 
   computerPattern: string[] = []
+  playerTries = false;
+  playerPattern: string[] = []
   async playBack() {
+    this.playerTries = false;
     this.computerPattern = []
     // right now the size range is 2-4 so make it easier to test can really be any range.
     var randomSize = this.generateRandomNumGeneric(2, 4);
@@ -80,13 +83,48 @@ export class AppComponent {
       var randomColor = this.generateRandomNumGeneric(1, 4)
       this.computerPattern.push('imc'+randomColor);
     }
-
+    console.log(this.computerPattern)
     for (var s of this.computerPattern) {
       this.onPress(s);
       await this.sleep(800);
     }
 
+    this.playerTries = true;
+
     }
+  
+  addPlayerPattern(pattern: string){
+    if (this.playerTries) {
+      this.playerPattern.push(pattern)
+    }
+
+  }
+
+  winCheck() :boolean{
+    let i = 0;
+    let j = 0;
+    if (this.playerTries) {
+      while (i < this.playerPattern.length){
+        if (this.computerPattern[i] != this.playerPattern[j]){
+          console.log("INCORRECT - GAME OVER")
+          this.playerTries = false;
+          this.playerPattern = []
+          return false
+        }
+        i += 1;
+        j += 1;
+      }
+      if (this.playerPattern.length == this.computerPattern.length) {
+      console.log("YOU WIN!")
+      this.playerTries = false;
+      this.playerPattern = []
+      return true;
+      } 
+    }
+    return false;
+    
+  }
+   
 
   playPattern(arr : number[]) {
     //run through the pattern array and light up each button that corresponds to the number in the array
@@ -186,8 +224,9 @@ export class AppComponent {
         this.hid4 = false;
      }, 500);
     }
-
-   
+    this.addPlayerPattern(cat);
+    this.winCheck();
+    console.log(this.playerPattern)
   }
 
   //for the random number generation
