@@ -66,6 +66,27 @@ export class AppComponent {
 
   }
 
+  sleep(ms: number) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+  }
+
+  computerPattern: string[] = []
+  async playBack() {
+    this.computerPattern = []
+    var randomSize = this.generateRandomNumGeneric(2, 4);
+
+    for (let i=0;i<randomSize;i++) {
+      var randomColor = this.generateRandomNumGeneric(1, 4)
+      this.computerPattern.push('imc'+randomColor);
+    }
+
+    for (var s of this.computerPattern) {
+      this.onPress(s);
+      await this.sleep(800);
+    }
+
+    }
+
   playPattern(arr : number[]) {
     //run through the pattern array and light up each button that corresponds to the number in the array
   }
@@ -188,6 +209,12 @@ export class AppComponent {
         }
       }
   }
+  }
+
+  generateRandomNumGeneric(min: number, max : number) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
 }
