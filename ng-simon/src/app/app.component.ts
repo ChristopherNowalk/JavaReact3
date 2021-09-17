@@ -73,7 +73,12 @@ export class AppComponent {
   computerPattern: string[] = []
   playerTries = false;
   playerPattern: string[] = []
+  playerWins: boolean = false;
+  playerLoses: boolean = false;
+
   async playBack() {
+    this.playerWins = false;
+    this.playerLoses = false;
     this.playerTries = false;
     this.computerPattern = []
     // right now the size range is 2-4 so make it easier to test can really be any range.
@@ -97,7 +102,6 @@ export class AppComponent {
     if (this.playerTries) {
       this.playerPattern.push(pattern)
     }
-
   }
 
   winCheck() :boolean{
@@ -109,6 +113,7 @@ export class AppComponent {
           console.log("INCORRECT - GAME OVER")
           this.playerTries = false;
           this.playerPattern = []
+          this.playerLoses = true;
           return false
         }
         i += 1;
@@ -118,6 +123,7 @@ export class AppComponent {
       console.log("YOU WIN!")
       this.playerTries = false;
       this.playerPattern = []
+      this.playerWins = true;
       return true;
       } 
     }
